@@ -1,14 +1,14 @@
 import pygame
 import sys
 from constants import SCREEN_WIDTH, SCREEN_HEIGHT
-
-def set_up_display():
-    screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-    pygame.display.set_caption('Pygame Boilerplate')
-    return screen
+from setup import set_up_display, set_window_icon
 
 # Initialize Pygame
 pygame.init()
+
+# Set window icon
+# Pass None to use the default icon path, or specify a path to your custom icon image
+set_window_icon(None)
 
 # Set up display
 screen = set_up_display()
@@ -26,15 +26,7 @@ while running:
         # Handle QUIT event
         if event.type == pygame.QUIT:
             running = False
-        
-        # Handle fullscreen toggle
-        if event.type == pygame.KEYDOWN and event.key == pygame.K_F11:
-            fullscreen = not fullscreen
-            if fullscreen:
-                screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
-            else:
-                screen = pygame.display.set_mode((0, 0))
-                screen = set_up_display()
+
 
     screen.fill((30, 30, 30))  # Fill the screen with a dark color
 
