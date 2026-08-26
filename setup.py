@@ -1,8 +1,9 @@
+
 import pygame
 from constants import SCREEN_WIDTH, SCREEN_HEIGHT, GAME_TITLE
 
 def set_up_display():
-    screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+    screen = pygame.display.set_mode((int(SCREEN_WIDTH), int(SCREEN_HEIGHT)))
     pygame.display.set_caption(GAME_TITLE)
     return screen
 
