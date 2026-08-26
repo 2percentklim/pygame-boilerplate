@@ -1,6 +1,7 @@
+
 import pygame
 import sys
-from constants import SCREEN_WIDTH, SCREEN_HEIGHT
+from constants import DEFAULT_COLOR
 from setup import set_up_display, set_window_icon
 
 # Initialize Pygame
@@ -27,8 +28,7 @@ while running:
         if event.type == pygame.QUIT:
             running = False
 
-
-    screen.fill((30, 30, 30))  # Fill the screen with a dark color
+    screen.fill(DEFAULT_COLOR)  # Fill the screen with a dark color
 
     # Draw everything here
 

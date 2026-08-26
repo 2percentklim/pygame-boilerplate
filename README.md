@@ -4,7 +4,6 @@ A Pygame project boilerplate.
 
 ## Setup
 
-
 1. **Install prerequisites (Debian/Ubuntu only, if not already installed):**
    ```bash
    sudo apt-get update && sudo apt-get install -y python3-venv python3-pip
@@ -29,6 +28,11 @@ A Pygame project boilerplate.
 5. **Run the game:**
    ```bash
    python main.py
+   ```
+
+   If you prefer calling the interpreter directly, use:
+   ```bash
+   venv/bin/python main.py
    ```
 
 ## Project Structure
