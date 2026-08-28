@@ -1,3 +1,6 @@
+artifacts/
+assets/Boilerplate-Icon.ico
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -14,3 +17,4 @@ ENV/
 
 # Mac/Linux
 .DS_Store
+source/
