@@ -7,10 +7,6 @@ from setup import set_up_display, set_window_icon
 # Initialize Pygame
 pygame.init()
 
-# Set window icon
-# Pass None to use the default icon path, or specify a path to your custom icon image
-set_window_icon(None)
-
 # Set up display
 screen = set_up_display()
 
