@@ -5,3 +5,5 @@ SCREEN_HEIGHT = int(SCREEN_WIDTH * (9 / 16)) # 16:9 aspect ratio, change to 4:3 
 GAME_TITLE = 'Pygame Boilerplate'
 
 DEFAULT_COLOR = (30, 30, 30)  # Dark color for screen fill
+
+DEFAULT_FPS = 60  # Frames per second

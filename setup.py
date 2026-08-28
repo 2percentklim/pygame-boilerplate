@@ -13,6 +13,21 @@ def set_window_icon(icon_path=None):
 def set_up_display(icon_path=None):
     set_window_icon(icon_path)
     pygame.display.set_caption(GAME_TITLE)
-    screen = pygame.display.set_mode((int(SCREEN_WIDTH), int(SCREEN_HEIGHT)))
+    screen = pygame.display.set_mode(
+        (int(SCREEN_WIDTH), int(SCREEN_HEIGHT)),
+        pygame.RESIZABLE,
+    )   
     return screen
+
+# This works but is "janky" when returning to windowed mode
+def toggle_fullscreen(screen, fullscreen):
+    fullscreen = not fullscreen
+    if fullscreen:
+        screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
+    else:
+        screen = pygame.display.set_mode(
+            (int(SCREEN_WIDTH), int(SCREEN_HEIGHT)),
+            pygame.RESIZABLE,
+        )
+    return screen, fullscreen
 

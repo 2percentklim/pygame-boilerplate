@@ -1,7 +1,7 @@
 
 import pygame
 import sys
-from constants import DEFAULT_COLOR
+from constants import DEFAULT_COLOR, DEFAULT_FPS
 from setup import set_up_display, set_window_icon
 
 # Initialize Pygame
@@ -29,7 +29,7 @@ while running:
     # Draw everything here
 
     pygame.display.flip()
-    game_clock.tick(60)  # Limit to 60 FPS
+    game_clock.tick(DEFAULT_FPS)  # Limit to 60 FPS
 
 pygame.quit()
 sys.exit()
