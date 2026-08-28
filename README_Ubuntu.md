@@ -1,60 +1,45 @@
 # Pygame Boilerplate
 
 A small starting point for making a game with Pygame.
+ **__It is recommended that you test your game in windows for full compatibility with the pygame library__**
 
 ## Setup
 
 1. Fork or download this project.
-2. Install [Python](https://www.python.org/downloads/). On Windows, select **Add Python to PATH** during installation.
+2. Install Python and pip:
+
+   ```bash
+   sudo apt update
+   sudo apt install python3 python3-pip
+   ```
+
+   This installs Python and its package installer.
+
 3. Open a terminal in the project folder and upgrade pip:
 
-   ```powershell
-   py -m pip install --upgrade pip
+   ```bash
+   python3 -m pip install --user --upgrade pip
    ```
 
    This updates Python's package installer before you add Pygame.
 
 4. Install Pygame:
 
-   ```powershell
-   py -m pip install pygame
+   ```bash
+   python3 -m pip install --user pygame
    ```
 
    This installs the library the game uses for its window, graphics, and input.
 
 5. Run the game:
 
-   ```powershell
-   py main.py
+   ```bash
+   python3 main.py
    ```
 
    This starts the game from its `main.py` entry point.
 
 Start changing [main.py](main.py) to make the game yours. Shared settings such as the window size, title, and background color are in [constants.py](constants.py).
-
-## Windows Installer
-
-Build a self-contained installer with:
-
-```powershell
-py tools\installer\build_installer.py
-```
-
-The first build requires Inno Setup. Install it once with:
-
-```powershell
-winget install --id JRSoftware.InnoSetup -e
-```
-
-This installs the tool that turns your game into a Windows `Setup.exe`.
-
-Build the installer after you are ready to share an update:
-
-```powershell
-py tools\installer\build_installer.py
-```
-
-This packages Python, Pygame, your game files, and the application icon. The finished installer is `artifacts\installer\Pygame-Boilerplate-Setup.exe`.
 
 ## Project Structure
 
@@ -63,5 +48,3 @@ This packages Python, Pygame, your game files, and the application icon. The fin
 - `setup.py`: Pygame display and window icon setup.
 - `assets/`: Images, sounds, and other game resources.
 - `tools/installer/`: Scripts used to create the Windows installer.
-
-For Ubuntu instructions, see [README_Ubuntu.md](README_Ubuntu.md).
