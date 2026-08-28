@@ -8,7 +8,6 @@ import sys
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 ASSETS_DIR = PROJECT_ROOT / "assets"
-ICON_PNG = ASSETS_DIR / "Boilerplate-Icon-32.png"
 ICON_ICO = ASSETS_DIR / "Boilerplate-Icon.ico"
 ARTIFACTS_DIR = PROJECT_ROOT / "artifacts"
 DIST_DIR = ARTIFACTS_DIR / "dist"
@@ -32,15 +31,10 @@ def find_iscc() -> str | None:
 
 
 def main() -> None:
-    if not ICON_PNG.is_file():
-        raise FileNotFoundError(f"Required icon was not found: {ICON_PNG}")
+    if not ICON_ICO.is_file():
+        raise FileNotFoundError(f"Required icon was not found: {ICON_ICO}")
 
-    run([sys.executable, "-m", "pip", "install", "pygame", "PyInstaller", "Pillow"])
-
-    from PIL import Image
-
-    with Image.open(ICON_PNG) as icon:
-        icon.save(ICON_ICO, format="ICO", sizes=[(16, 16), (32, 32), (48, 48), (256, 256)])
+    run([sys.executable, "-m", "pip", "install", "pygame", "PyInstaller"])
 
     run([
         sys.executable,
