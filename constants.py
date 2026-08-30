@@ -1,4 +1,10 @@
 
+from pathlib import Path
+
+
+PROJECT_ROOT = Path(__file__).resolve().parent
+ASSETS_DIR = PROJECT_ROOT / "assets"
+
 # Screen dimensions
 DESIGN_WIDTH = 1200
 DESIGN_HEIGHT = int(DESIGN_WIDTH * (9 / 16)) # 16:9 aspect ratio, change to 4:3 if you want by using DESIGN_WIDTH * (3 / 4)
@@ -14,8 +20,8 @@ DEFAULT_FPS = 60  # Frames per second
 
 #FONTS
 DEFAULT_TITLE_FONT_SIZE = 60
-DEFAULT_TITLE_FONT_NAME = "Tengoku"
+DEFAULT_TITLE_FONT_PATH = ASSETS_DIR / "fonts" / "Tengoku.ttf"
 
 #BUTTONS
 DEFAULT_BUTTON_FONT_SIZE = 30
-DEFAULT_BUTTON_FONT_NAME = "Tengoku"
+DEFAULT_BUTTON_FONT_PATH = ASSETS_DIR / "fonts" / "Tengoku.ttf"

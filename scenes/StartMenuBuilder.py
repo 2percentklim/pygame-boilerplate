@@ -2,11 +2,11 @@ import pygame
 
 from constants import (
     DEFAULT_BUTTON_COLOR,
-    DEFAULT_BUTTON_FONT_NAME,
+    DEFAULT_BUTTON_FONT_PATH,
     DEFAULT_BUTTON_FONT_SIZE,
     DEFAULT_HOVER_COLOR,
     DEFAULT_TEXT_COLOR,
-    DEFAULT_TITLE_FONT_NAME,
+    DEFAULT_TITLE_FONT_PATH,
     DEFAULT_TITLE_FONT_SIZE,
     GAME_TITLE,
 )
@@ -22,12 +22,12 @@ class StartMenuBuilder(SceneBuilder):
         self.update_layout()
 
     def update_layout(self):
-        self.title_font = pygame.font.SysFont(
-            DEFAULT_TITLE_FONT_NAME,
+        self.title_font = pygame.font.Font(
+            DEFAULT_TITLE_FONT_PATH,
             round(DEFAULT_TITLE_FONT_SIZE * self.scale),
         )
-        self.button_font = pygame.font.SysFont(
-            DEFAULT_BUTTON_FONT_NAME,
+        self.button_font = pygame.font.Font(
+            DEFAULT_BUTTON_FONT_PATH,
             round(DEFAULT_BUTTON_FONT_SIZE * self.scale),
         )
 
