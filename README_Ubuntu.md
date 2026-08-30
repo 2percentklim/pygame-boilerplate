@@ -1,7 +1,6 @@
 # Pygame Boilerplate
 
-A small starting point for making a game with Pygame.
- **__It is recommended that you test your game in windows for full compatibility with the pygame library__**
+A small starting point for making a game with pygame-ce.
 
 ## Setup
 
@@ -21,15 +20,15 @@ A small starting point for making a game with Pygame.
    python3 -m pip install --user --upgrade pip
    ```
 
-   This updates Python's package installer before you add Pygame.
+   This updates Python's package installer before you add pygame-ce.
 
-4. Install Pygame:
+4. Install pygame-ce:
 
    ```bash
-   python3 -m pip install --user pygame
+   python3 -m pip install --user pygame-ce
    ```
 
-   This installs the library the game uses for its window, graphics, and input.
+   This installs the community-maintained library the game uses for its window, graphics, and input.
 
 5. Run the game:
 

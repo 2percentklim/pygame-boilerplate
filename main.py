@@ -3,7 +3,7 @@ import pygame
 import sys
 from constants import DEFAULT_COLOR, DEFAULT_FPS
 from setup import set_up_display, set_window_icon
-from scenes.start_menu import draw_start_menu
+from scenes.StartMenuBuilder import StartMenuBuilder
 
 # Initialize Pygame
 pygame.init()
@@ -13,6 +13,9 @@ screen = set_up_display()
 
 # Set up clock
 game_clock = pygame.time.Clock()
+
+# Create StartMenuBuilder instance
+start_menu = StartMenuBuilder(screen)
 
 # Main game loop
 fullscreen = False
@@ -28,7 +31,7 @@ while running:
     screen.fill(DEFAULT_COLOR)  # Fill the screen with a dark color
 
     # Draw everything here
-    draw_start_menu(screen)
+    start_menu.draw()
     pygame.display.flip()
     game_clock.tick(DEFAULT_FPS)  # Limit to 60 FPS
 

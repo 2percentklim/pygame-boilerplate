@@ -34,7 +34,7 @@ def main() -> None:
     if not ICON_ICO.is_file():
         raise FileNotFoundError(f"Required icon was not found: {ICON_ICO}")
 
-    run([sys.executable, "-m", "pip", "install", "pygame", "PyInstaller"])
+    run([sys.executable, "-m", "pip", "install", "pygame-ce", "PyInstaller"])
 
     run([
         sys.executable,

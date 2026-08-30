@@ -12,15 +12,15 @@ A small starting point for making a game with Pygame.
    py -m pip install --upgrade pip
    ```
 
-   This updates Python's package installer before you add Pygame.
+   This updates Python's package installer before you add pygame-ce.
 
-4. Install Pygame:
+4. Install pygame-ce:
 
    ```powershell
-   py -m pip install pygame
+   py -m pip install pygame-ce
    ```
 
-   This installs the library the game uses for its window, graphics, and input.
+   This installs the community-maintained library the game uses for its window, graphics, and input.
 
 5. Run the game:
 
