@@ -58,10 +58,13 @@ This packages Python, Pygame, your game files, and the application icon. The fin
 
 ## Project Structure
 
-- `main.py`: Game entry point and main loop.
-- `constants.py`: Window size, title, and other shared settings.
-- `setup.py`: Pygame display and window icon setup.
-- `assets/`: Images, sounds, and other game resources.
-- `tools/installer/`: Scripts used to create the Windows installer.
+- `main.py`: Game entry point, event loop, and start-menu rendering.
+- `constants.py`: Shared display, layout, color, and font settings.
+- `setup.py`: Pygame display and window-icon setup.
+- `scenes/SceneBuilder.py`: Abstract base class for responsive scenes.
+- `scenes/StartMenuBuilder.py`: Start menu with title and button rendering.
+- `assets/`: Images, sounds, icons, and other game resources.
+- `tools/installer/`: Scripts and Inno Setup configuration for the Windows installer.
+- `artifacts/`: Generated executable build files and installer output.
 
 For Ubuntu instructions, see [README_Ubuntu.md](README_Ubuntu.md).
