@@ -30,6 +30,13 @@ A small starting point for making a game with Pygame.
 
    This starts the game from its `main.py` entry point.
 
+   To show a 32px debug grid with chessboard-style coordinates (`A1` through
+   `T11`), run:
+
+   ```powershell
+   py main.py --grid
+   ```
+
 Start changing [main.py](main.py) to make the game yours. Shared settings such as the window size, title, and background color are in [constants.py](constants.py).
 
 ## Windows Installer

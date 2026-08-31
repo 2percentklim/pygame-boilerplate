@@ -1,8 +1,12 @@
 # Artwork Assets
 
-The game is designed at 1200 x 675 pixels (16:9). Create artwork at its intended
-design size; scenes scale it to the active window size. Keep pixel art at integer
-multiples of its base resolution and avoid scaling it with smoothing.
+The game renders scenes at a fixed logical canvas of 640 x 360 pixels (16:9).
+The default window is 1280 x 720. It scales the canvas to the largest size that
+preserves its aspect ratio, using nearest-neighbor filtering. This avoids stretching
+and leaves black bars only when the active window or fullscreen display is not 16:9.
+Create pixel art at its intended logical size. Whole-number display scales produce
+the most even pixel sizes; other scales remain sharp but can vary individual pixel
+widths slightly.
 
 ## File Types
 
@@ -26,19 +30,22 @@ size matters, but PNG is the default because it is predictable across Pygame too
 | Toolbar or action icon | 24 x 24 or 32 x 32 | Use 32px when it needs to read clearly at a distance. |
 | Menu button icon | 48 x 48 or 64 x 64 | Leave transparent padding around the artwork. |
 | Small item or status icon | 32 x 32 or 48 x 48 | Keep a consistent visual box across the set. |
-| Character sprite | 64 x 64 or 96 x 96 per frame | Use a larger frame only when the character occupies a substantial screen area. |
-| NPC, enemy, or prop sprite | 48 x 48, 64 x 64, or 96 x 96 per frame | Choose one grid size per asset family. |
-| Sprite sheet | Frame size times columns and rows | Example: eight 64 x 64 frames in four columns is 256 x 128. |
-| Terrain tile | 32 x 32, 48 x 48, or 64 x 64 | Use square, seamlessly tileable PNGs. Do not mix tile sizes in one map. |
+| Character sprite | 32 x 32 or 32 x 48 per frame | Default player and NPC scale. Keep every animation frame on the same grid. |
+| NPC, enemy, or prop sprite | 32 x 32 per frame | Standard world-object size; use 32 x 48 or 32 x 64 for taller subjects. |
+| Large character, vehicle, or boss | 64 x 64 per frame | Use when the subject needs additional silhouette or animation detail. |
+| Sprite sheet | Frame size times columns and rows | Example: eight 32 x 32 frames in four columns is 128 x 64. |
+| Terrain tile | 32 x 32 | Standard world grid. Make square, seamlessly tileable PNGs; do not mix tile sizes in one map. |
 | UI panel or dialog art | Build from 9-slice pieces | Use corners and repeatable edges rather than one large fixed-size panel. |
-| Background layer | 1200 x 675 | Match the design canvas for a full-screen, non-scrolling background. |
-| Scrolling/parallax layer | At least 1200px wide | Make it wider than the viewport when it must scroll horizontally. |
-| Splash or title artwork | 1200 x 675 or 1200 x 300 | Keep important details away from the outer 5% of the image. |
+| Background layer | 640 x 360 | Match the logical canvas for a full-screen, non-scrolling background. |
+| Scrolling/parallax layer | At least 640px wide | Make it wider than the logical viewport when it must scroll horizontally. |
+| Splash or title artwork | 640 x 360 or 640 x 160 | Keep important details away from the outer 5% of the image. |
 
-For pixel art, select a base unit such as 16px or 32px and keep outlines,
-animation frames, and tiles aligned to that grid. For painted or high-resolution
-art, use the dimensions above as display targets and retain a separate source file
-outside the shipped asset folder.
+Use 32px as the default world grid. A 64 x 64 sprite can sit over that grid for
+large subjects, while 16 x 16 is appropriate for small item or status icons.
+"32-bit" describes color depth; describe asset dimensions as 32 x 32 or 64 x 64
+pixels. Keep outlines, animation frames, and tiles aligned to the selected grid.
+For painted or high-resolution art, retain a separate source file outside the
+shipped asset folder.
 
 ## Organization
 
@@ -68,4 +75,5 @@ frames, use zero-padded numbers: `player-run-00.png`, `player-run-01.png`.
 - Remove unused transparent borders unless the padding is intentional for alignment.
 - Keep every frame in a sprite animation the same dimensions and anchor position.
 - Check tile edges at 100% zoom before adding them to a map.
+- Test scenes at 1280 x 720 and fullscreen; non-16:9 screens can show small black bars to preserve pixel proportions.
 - Keep original layered source files separate from runtime-ready artwork.

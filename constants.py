@@ -5,9 +5,14 @@ from pathlib import Path
 PROJECT_ROOT = Path(__file__).resolve().parent
 ASSETS_DIR = PROJECT_ROOT / "assets"
 
-# Screen dimensions
-DESIGN_WIDTH = 1200
-DESIGN_HEIGHT = int(DESIGN_WIDTH * (9 / 16)) # 16:9 aspect ratio, change to 4:3 if you want by using DESIGN_WIDTH * (3 / 4)
+# Logical screen dimensions. Render scenes here, then scale by whole numbers only.
+DESIGN_WIDTH = 640
+DESIGN_HEIGHT = 360
+WINDOW_WIDTH = 1280
+WINDOW_HEIGHT = 720
+GRID_SIZE = 32
+GRID_COLOR = (105, 145, 105)
+GRID_LABEL_COLOR = (185, 220, 185)
 
 GAME_TITLE = 'Pygame Boilerplate'
 
@@ -19,9 +24,9 @@ DEFAULT_HOVER_COLOR = (85, 125, 190)  # Lighter blue for hover effect
 DEFAULT_FPS = 60  # Frames per second
 
 #FONTS
-DEFAULT_TITLE_FONT_SIZE = 60
+DEFAULT_TITLE_FONT_SIZE = 30
 DEFAULT_TITLE_FONT_PATH = ASSETS_DIR / "fonts" / "Tengoku.ttf"
 
 #BUTTONS
-DEFAULT_BUTTON_FONT_SIZE = 30
+DEFAULT_BUTTON_FONT_SIZE = 15
 DEFAULT_BUTTON_FONT_PATH = ASSETS_DIR / "fonts" / "Tengoku.ttf"
