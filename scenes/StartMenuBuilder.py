@@ -9,6 +9,7 @@ from constants import (
     DEFAULT_TITLE_FONT_PATH,
     DEFAULT_TITLE_FONT_SIZE,
     GAME_TITLE,
+    DEFAULT_COLOR
 )
 from scenes.SceneBuilder import SceneBuilder
 
@@ -22,6 +23,7 @@ class StartMenuBuilder(SceneBuilder):
         self.update_layout()
 
     def update_layout(self):
+        # Everything in this method will be deprecated once the switch to 32x32 px asset system is implemented
         self.title_font = pygame.font.Font(
             DEFAULT_TITLE_FONT_PATH,
             DEFAULT_TITLE_FONT_SIZE,
@@ -31,25 +33,26 @@ class StartMenuBuilder(SceneBuilder):
             DEFAULT_BUTTON_FONT_SIZE,
         )
 
-        button_size = (100, 25)
+        button_size = (100, 25) # MAGIC NUMBERS, SHOULD BE CONSTANTS OR CONFIGURABLE
         self.new_game_button = pygame.Rect((0, 0), button_size)
         self.load_game_button = pygame.Rect((0, 0), button_size)
         self.settings_button = pygame.Rect((0, 0), button_size)
 
         self.new_game_button.center = (
-            self.canvas_width // 2,
-            self.canvas_height // 2,
+            self.canvas_width // 2, # MAGIC NUMBER, NEED TO CREATE A CHART OR HELPER FUNCTION TO CALCULATE POSITIONS BASED ON GIVEN CELL
+            self.canvas_height // 2, # MAGIC NUMBER, NEED TO CREATE A CHART OR HELPER FUNCTION TO CALCULATE POSITIONS BASED ON GIVEN CELL
         )
         self.load_game_button.center = (
             self.canvas_width // 2,
-            212,
+            212, # MAGIC NUMBER, NEED TO CREATE A CHART OR HELPER FUNCTION TO CALCULATE POSITIONS BASED ON GIVEN CELL
         )
         self.settings_button.center = (
-            320,
-            244,
+            320, # MAGIC NUMBER, NEED TO CREATE A CHART OR HELPER FUNCTION TO CALCULATE POSITIONS BASED ON GIVEN CELL
+            244,# MAGIC NUMBER, NEED TO CREATE A CHART OR HELPER FUNCTION TO CALCULATE POSITIONS BASED ON GIVEN CELL
         )
 
     def draw_content(self):
+        self.canvas.fill(DEFAULT_COLOR)  # SHOULD THIS BE HERE?
         self.draw_title()
         self.draw_buttons()
 
@@ -61,8 +64,8 @@ class StartMenuBuilder(SceneBuilder):
         )
         title_rect = title_surface.get_rect(
             center=(
-                self.canvas_width // 2,
-                116,
+                self.canvas_width // 2, # MAGIC NUMBER, NEED TO CREATE A CHART OR HELPER FUNCTION TO CALCULATE POSITIONS BASED ON GIVEN CELL
+                116, # MAGIC NUMBER, NEED TO CREATE A CHART OR HELPER FUNCTION TO CALCULATE POSITIONS BASED ON GIVEN CELL
             )
         )
         self.canvas.blit(title_surface, title_rect)
@@ -84,7 +87,7 @@ class StartMenuBuilder(SceneBuilder):
                 self.canvas,
                 color,
                 button,
-                border_radius=3,
+                border_radius=3, # MAGIC NUMBER
             )
 
             label_surface = self.button_font.render(label, False, DEFAULT_TEXT_COLOR)

@@ -4,14 +4,12 @@ from abc import ABC, abstractmethod
 import pygame
 
 from constants import (
-    DEFAULT_COLOR,
     DESIGN_HEIGHT,
     DESIGN_WIDTH,
     GRID_COLOR,
     GRID_LABEL_COLOR,
     GRID_SIZE,
 )
-
 
 class SceneBuilder(ABC):
     def __init__(self, screen, show_grid=False):
@@ -44,7 +42,6 @@ class SceneBuilder(ABC):
             self.update_screen_metrics()
             self.update_layout()
 
-        self.canvas.fill(DEFAULT_COLOR)
         self.draw_content()
         if self.show_grid:
             self.draw_grid()

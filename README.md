@@ -37,6 +37,8 @@ A small starting point for making a game with Pygame.
    py main.py --grid
    ```
 
+   This grid is helpful for placing tiles/sprites.
+
 Start changing [main.py](main.py) to make the game yours. Shared settings such as the window size, title, and background color are in [constants.py](constants.py).
 
 ## Windows Installer
