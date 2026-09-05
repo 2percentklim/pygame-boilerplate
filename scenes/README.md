@@ -33,12 +33,12 @@ settings_button.center = (320, 244)
 
 The start menu uses these placements:
 
-| Object | Grid alignment | Logical center |
-| --- | --- | --- |
-| Game title | Horizontally centered; row 4 | `(320, 116)` |
-| New Game | Centered across I6-L6 | `(320, 180)` |
-| Load Game | Centered across I7-L7 | `(320, 212)` |
-| Settings | Centered on the J/K gridline in row 8 | `(320, 244)` |
+| Object     | Grid alignment                        | Logical center |
+| ---------- | ------------------------------------- | -------------- |
+| Game title | Horizontally centered; row 4          | `(320, 116)`   |
+| New Game   | Centered across I6-L6                 | `(320, 180)`   |
+| Load Game  | Centered across I7-L7                 | `(320, 212)`   |
+| Settings   | Centered on the J/K gridline in row 8 | `(320, 244)`   |
 
 ## Tiles and Scene Objects
 
